@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 
+        Author: Jose Felix
+        Date: 1.22.19
+     -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Millenium Computers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="mc_styles.css" />
+    <script src="mc_script.js"></script>
+    <link rel="stylesheet" href="mc_form.css" />
+
+</head>
+
+<body>
+    <header>
+        <a href="www.bestbuy.com"><img id="headerImg" src="mc_logo.png" alt="Millenium Computers" /></a>  
+    </header>
+    <form method="POST" name="cForm" id="purchase" action=" http://www.mill_computers.com/orders/process.cgi.">
+        <div class="formDiv">
+                <label for="fName">First Name*</label>
+                <input type="text" name="fName" id="fName" />
+        </div>
+        <div class="formDiv">
+                <label for="lName">Last Name*</label>
+                <input type="text" name="lName" id="lName" />
+        </div>
+        <div class="formDiv">
+                <label for="street">Street*</label>
+                <input type="text" id="street" />
+        </div>
+        <div class="formDiv">
+                <label for="city">City*</label>
+                <input type="text" placeholder="Compton" />
+        </div>
+        <div class="formDiv">
+                <label for="state">State*</label>
+                <input type="text" name="state" id="state" list="stateList" required>
+                <datalist id="stateList" />
+                        <option value="AL" />
+                        <option value="AK" />
+                        <option value="AZ" />
+                        <option value="AR" />
+                        <option value="CA" />
+                        <option value="CO" />
+                        <option value="CT" />
+                        <option value="DE" />
+                        <option value="FL" />
+                        <option value="GA" />
+                        <option value="HI" />
+                        <option value="ID" />
+                        <option value="IL" />
+                        <option value="IN" />
+                        <option value="IA" />
+                        <option value="KS" />
+                        <option value="KY" />
+                        <option value="LA" />
+                        <option value="ME" />
+                        <option value="MD" />
+                        <option value="MA" />
+                        <option value="MI" />
+                        <option value="MN" />
+                        <option value="MS" />
+                        <option value="MO" />
+                        <option value="MT" />
+                        <option value="NE" />
+                        <option value="NV" />
+                        <option value="NH" />
+                        <option value="NJ" />
+                        <option value="NM" />
+                        <option value="NY" />
+                        <option value="NC" />
+                        <option value="ND" />
+                        <option value="OH" />
+                        <option value="OK" />
+                        <option value="OR" />
+                        <option value="PA" />
+                        <option value="RI" />
+                        <option value="SC" />
+                        <option value="SD" />
+                        <option value="TN" />
+                        <option value="TX" />
+                        <option value="UT" />
+                        <option value="VT" />
+                        <option value="VA" />
+                        <option value="WA" />
+                        <option value="WV" />
+                        <option value="WI" />
+                        <option value="WY" />
+                </datalist>
+        </div>
+        <div class="formDiv">
+                <label for="zip">Zip*</label>
+                <input type="text" placeholder="nnnnn (-nnnn)" pattern="^\d{5}(-\d{4})?$">
+
+        </div>
+        <div class="formDiv">
+                <label for="phone">Phone</label>
+                <input type="tel" placeholder="(nnn) nnn-nnnn" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$">
+        </div>
+        </form>
+</body>
+
+</html>
