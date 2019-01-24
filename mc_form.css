@@ -6,11 +6,46 @@
 */
 
 /* Form styles */
-.formDiv {
-        background: whitesmoke;
-        
+legend {
+        background-color: none;
+        color: white;
+        padding: 5px;
+        clear: both;
 }
-
+label {
+        clear: right;
+}
+form {
+        background: rgb(236, 237, 241);
+}
+fieldset {
+        border: none;
+}
+div {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        margin: 7px 0px;
+}
+div.form {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        margin: 7px 0px;
+}
+div {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        margin: 7px 0px;
+}
 /* Input styles */
+input:not([type='submit']), input:not([type='radio']) {
+        position: absolute;
+        left: 1000px;
+}
 
 

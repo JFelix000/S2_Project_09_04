@@ -18,10 +18,23 @@
 
 <body>
     <header>
-        <a href="www.bestbuy.com"><img id="headerImg" src="mc_logo.png" alt="Millenium Computers" /></a>  
+         <div id="top"> 
+                 <a href="www.bestbuy.com"><img id="headerImg" src="mc_logo.png" alt="Millenium Computers" /></a>
+                <nav id="top">
+                        <ul>
+                                <li><a href="#">Popular</a></li>
+                                <li><a href="#">FAQ's</a></li>
+                                <li><a href="#">Deals</a></li>
+                                <li><a href="#">Support</a></li>
+                        </ul>
+                </nav>
+         </div>
     </header>
     <form method="POST" name="cForm" id="purchase" action=" http://www.mill_computers.com/orders/process.cgi.">
+        <fieldset>
+                        <legend>Title</legend>
         <div class="formDiv">
+
                 <label for="fName">First Name*</label>
                 <input type="text" name="fName" id="fName" />
         </div>
@@ -38,7 +51,7 @@
                 <input type="text" placeholder="Compton" />
         </div>
         <div class="formDiv">
-                <label for="state">State*</label>
+                <label for="state">State</label>
                 <input type="text" name="state" id="state" list="stateList" required>
                 <datalist id="stateList" />
                         <option value="AL" />
@@ -102,6 +115,71 @@
                 <label for="phone">Phone</label>
                 <input type="tel" placeholder="(nnn) nnn-nnnn" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$">
         </div>
+        </fieldset>
+        </form>
+        <form id="second" action="www.bestbuy.com" />
+        <legend>Specs</legend>
+                <div class="specs">
+                <label for="pSpeed">Processor Speed</label>
+                <select name="pSpeed" id="pSpeed" >
+                        <optgroup>
+                                <option value="3.2 GHz">
+                                <option value="4.0 GHz">
+                                <option value="5.2 GHx">
+                        </optgroup>
+
+                </select>
+        </div>
+
+        <div class="specs">
+                <label for="mem">Memory</label>
+                <input type="text">
+        </div>
+
+        <div class="specs">
+                <label for="monitor">Monitor</label>
+                <input type="text">
+        </div>
+        <div class="specs">
+                <label for="hd">Hard Drive</label>
+                <input type="text">
+        </div>
+
+        <div>
+                        <label for="">DVD Burner</label>
+                        <fieldset class="optGroup">
+
+                                        <label for="cYes">yes</label>
+                                        <input name="oCorrect" id="cYes" value="yes" type="radio">
+                                        <label for="cNo">no</label>
+                                        <input name="oCorrect" id="cNo" value="no" type="radio">
+                                    </fieldset>
+        </div>
+
+        <div>
+                <label for="">Tuner Card</label>
+                        <fieldset class="optGroup">
+                                        <label for="cYes">yes</label>
+                                        <input name="oCorrect" id="cYes" value="yes" type="radio">
+                                        <label for="cNo">no</label>
+                                        <input name="oCorrect" id="cNo" value="no" type="radio">
+                                    </fieldset>
+        </div>
+
+        <div>
+                <label for="">Media Card Reader</label>
+                        <fieldset class="optGroup">
+                                        <label for="cYes">yes</label>
+                                        <input name="oCorrect" id="cYes" value="yes" type="radio">
+                                        <label for="cNo">no</label>
+                                        <input name="oCorrect" id="cNo" value="no" type="radio">
+                                    </fieldset>
+        </div>
+        <div id="buttons">
+                        <input type="submit" value="Submit My Survey" />
+                        <input type="reset" value="Cancel" />
+                    </div>
+
         </form>
 </body>
 
