@@ -10,39 +10,73 @@ html {
         height: 100%;
         background: url(ai-artificial-intelligence-codes-247791.jpg) round;
 }
-
+/* I made the body with some opacity so you can notice the back of the image that is called in from the url above. I have marginleft and right to be auto so that it centers the body element correctly within the page */
 body {
         background-color: rgba(60, 60, 164, 0.442);
         margin-left: auto;
         margin-right: auto;
         min-height: 100%;
-        width: 100%;
+        width: 90%;
 }
-
-#headerImg {
-        width: 80%;
+/* Header styles */
+/* This needed to have a display of block before the marginleft and right could be affected */
+header img.image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
 }
-
-nav#top ul li a {
+/* this could have been a blockquote or an article -it doesn't matter, because the CSS is the only thing that matters at the time */
+blockquote {
+        margin-top: 10px;
+        display: block;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: whitesmoke;
+        padding: 20px;
+}
+blockquote p {
+        font-size: 1.5em;
+        padding-top: 10px;
+}
+/* I had container collapse with the header so I put the display to tavle and content to empty tags along with aligning the side margins */
+blockquote h1 {
+        display: table;
+        content: "";
+        margin-left: auto;
+        margin-right: auto;
+        color: royalblue;
+        font-size: 1.6em;
+        text-align: center;
+        padding: 10px 0px;
+        padding-top: 10px;
+}
+/* Navigation Styles */
+nav ul li a {
         text-decoration: none;
         color: rgb(234, 234, 18);
 }
-nav#top ul li {
-        float: left;
-        padding-left: 45px;
-        padding-right: 45px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        background: rgb(29, 29, 173);
-        border-bottom-style: 2px solid black;
+
+nav ul li:hover {
+        opacity: 0.9;
+        line-height: 1.3em;
 }
-nav#top ul li a:hover {
+
+nav ul li a{
+        float: left;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        text-align: center;
+        overflow: hidden;
+        width: 25%;
+        background: rgb(29, 29, 173);
+}
+nav ul li a:hover {
         color: rgba(150, 150, 175, 0.863);
 }
 /* Form Styles */
+/* I gave the border a radius which makes the curved edges and the flex is given values for growth and shrink rates along with the standard output. */
 form {
-        margin-left: 10px;
-        border: solid 2px black;
         border-radius: 20px;
         -webkit-flex: 1 1 300px;
         flex: 1 1 300px;
@@ -53,23 +87,7 @@ form {
         margin-top: 10px;
         width: 70%;
 }
-form#second {
-        margin-left: auto;
-        margin-right: auto;
-        border: solid 2px black;
-        border-radius: 20px;
-        -webkit-flex: 1 1 300px;
-        flex: 1 1 300px;
-        font-size: 0.85em;
-        padding: 10px;
-        width: 70%;
-}
-body {
-        display: table;
-        content: "";
-        width: 90%;
-}
-
+/* the flex here is so that the page can render better with being stretched and not. This is important for changing the sizes of monitors. */
 div.formDiv {
         display: -webkit-flex;
         display: flex;
@@ -78,13 +96,6 @@ div.formDiv {
         margin: 7px 0px;
 }
 
-div.specs {
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-flow: row wrap;
-        flex-flow: row wrap;
-        margin: 7px 0px;
-}
 /* Navigation List Styles */
 
 

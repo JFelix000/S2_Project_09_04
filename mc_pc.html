@@ -15,44 +15,51 @@
     <link rel="stylesheet" href="mc_form.css" />
 
 </head>
-
+<!-- I made this nav using the ul which is unordered list so it won't be numbered like the ol. The link I just put to Bestbuy because there is no real website to put it to. The alt is the name of the item and in this case it is the header image. -->
 <body>
-    <header>
-         <div id="top"> 
-                 <a href="www.bestbuy.com"><img id="headerImg" src="mc_logo.png" alt="Millenium Computers" /></a>
-                <nav id="top">
+        <header>
+                <img class="image" src="mc_logo.png" alt="Millenium Computers" />
+                <nav>
                         <ul>
-                                <li><a href="#">Popular</a></li>
-                                <li><a href="#">FAQ's</a></li>
                                 <li><a href="#">Deals</a></li>
+                                <li><a href="#">FAQ's</a></li>
+                                <li><a href="#">Popular</a></li>
                                 <li><a href="#">Support</a></li>
                         </ul>
                 </nav>
-         </div>
+        </header>
+         <!-- Here I have the ending of the header differentiating the header image and nav with the rest of the page (the form and such) -->
+                <blockquote>
+                        <h1>Fill this out dawg</h1>
+                 <p>
+                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident voluptatum modi minus illum, reiciendis autem qui eos dolorum sint quia ducimus ut nemo labore eum consequuntur alias deserunt ad eaque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic laboriosam, expedita quas illo eveniet perferendis amet exercitationem mollitia molestiae quo soluta cupiditate voluptate accusamus vitae maiores deleniti magnam. Harum, necessitatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloremque quidem odit, modi qui eligendi hic molestias tempora dolorum. Voluptates tempora exercitationem quibusdam molestias amet natus sed fuga earum recusandae!
+                 </p>
+                </blockquote>
     </header>
     <form method="POST" name="cForm" id="purchase" action=" http://www.mill_computers.com/orders/process.cgi.">
-        <fieldset>
-                        <legend>Title</legend>
-        <div class="formDiv">
-
+        <!-- I started this form with a form element and the id purchase because it is what was requested. The link goes to the order processing site under the action attr. -->
+        <legend>Title</legend>
+        <fieldset id="first">
+        <div class="formRow">
                 <label for="fName">First Name*</label>
-                <input type="text" name="fName" id="fName" />
+                <input type="text" name="fName" id="fName" required/>
         </div>
-        <div class="formDiv">
+        <div class="formRow">
                 <label for="lName">Last Name*</label>
-                <input type="text" name="lName" id="lName" />
+                <input type="text" name="lName" id="lName" required/>
         </div>
-        <div class="formDiv">
+        <div class="formRow">
                 <label for="street">Street*</label>
-                <input type="text" id="street" />
+                <input type="text" id="street" required/>
         </div>
-        <div class="formDiv">
+        <div class="formRow">
                 <label for="city">City*</label>
-                <input type="text" placeholder="Compton" />
+                <input type="text" placeholder="Compton" required/>
         </div>
-        <div class="formDiv">
+        <!-- This is to make the states come up as they are clicked by the user the list and id need to be the same for it to work properly -->
+        <div class="formRow">
                 <label for="state">State</label>
-                <input type="text" name="state" id="state" list="stateList" required>
+                <input type="text" name="state" id="state" list="stateList">
                 <datalist id="stateList" />
                         <option value="AL" />
                         <option value="AK" />
@@ -106,35 +113,41 @@
                         <option value="WY" />
                 </datalist>
         </div>
-        <div class="formDiv">
+        <div class="formRow">
                 <label for="zip">Zip*</label>
-                <input type="text" placeholder="nnnnn (-nnnn)" pattern="^\d{5}(-\d{4})?$">
+                <input type="text" placeholder="nnnnn (-nnnn)" pattern="^\d{5}(-\d{4})?$" required/>
 
         </div>
-        <div class="formDiv">
+        <div class="formRow">
                 <label for="phone">Phone</label>
                 <input type="tel" placeholder="(nnn) nnn-nnnn" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$">
         </div>
         </fieldset>
-        </form>
-        <form id="second" action="www.bestbuy.com" />
+
         <legend>Specs</legend>
+        <fieldset id="second">
                 <div class="specs">
                 <label for="pSpeed">Processor Speed</label>
-                <select name="pSpeed" id="pSpeed" >
-                        <optgroup>
-                                <option value="3.2 GHz">
-                                <option value="4.0 GHz">
-                                <option value="5.2 GHx">
-                        </optgroup>
-
-                </select>
+                <input type="text" name="pSpeed" id="pSpeed     " list="pSpeed">
+                <select id="pSpeed" required>
+                        <datalist name="pSpeed" id="pSpeed">
+                                <option value="3.2 GHz" />
+                                <option value="4.0 GHz" />
+                                <option value="5.2 GHx" />
+                        </datalist>
         </div>
-
+<!-- datalists need an input still as well as the correct name and list connection.  -->
         <div class="specs">
-                <label for="mem">Memory</label>
-                <input type="text">
+                <label for="memList">Memory</label>
+                <input type="text" name="mem" id="mem" list="memList">
+                <datalist id="memList" >
+                        <option value="15'">
+                        <option value="17'">
+                        <option value="19'">
+                        <option value="21'">
+                </datalist>
         </div>
+        <!-- I have these in a different class so these divs can be separated from the rest and so the code is different as well -->
 
         <div class="specs">
                 <label for="monitor">Monitor</label>
@@ -146,26 +159,25 @@
         </div>
 
         <div>
-                        <label for="">DVD Burner</label>
-                        <fieldset class="optGroup">
-
-                                        <label for="cYes">yes</label>
-                                        <input name="oCorrect" id="cYes" value="yes" type="radio">
-                                        <label for="cNo">no</label>
-                                        <input name="oCorrect" id="cNo" value="no" type="radio">
-                                    </fieldset>
+                <label for="">DVD Burner</label>
+                <fieldset class="optGroup">
+                <label for="yes">yes</label>
+                <input name="correct" id="yes" value="yes" type="radio">
+                <label for="no">no</label>
+                <input name="correct" id="no" value="no" type="radio">
+        </fieldset>
         </div>
 
         <div>
                 <label for="">Tuner Card</label>
                         <fieldset class="optGroup">
-                                        <label for="cYes">yes</label>
-                                        <input name="oCorrect" id="cYes" value="yes" type="radio">
-                                        <label for="cNo">no</label>
-                                        <input name="oCorrect" id="cNo" value="no" type="radio">
-                                    </fieldset>
+                        <label for="cYes">yes</label>
+                        <input name="oCorrect" id="cYes" value="yes" type="radio">
+                        <label for="cNo">no</label>
+                        <input name="oCorrect" id="cNo" value="no" type="radio">
+        </fieldset>
         </div>
-
+<!-- This is the yes and no surveys that make it clickable for the user. It is listed as a radio type so it has a clickable ellipse for the selection -->
         <div>
                 <label for="">Media Card Reader</label>
                         <fieldset class="optGroup">
@@ -175,11 +187,12 @@
                                         <input name="oCorrect" id="cNo" value="no" type="radio">
                                     </fieldset>
         </div>
+        <!-- the submit type is the button that is clicked for the code to be run and people to take information from these forms. The page actually collects or works based off of the code done in javascript and that is linked in the code above in the document.  -->
         <div id="buttons">
-                        <input type="submit" value="Submit My Survey" />
+                        <input type="submit" value="Submit it" />
                         <input type="reset" value="Cancel" />
                     </div>
-
+                </fieldset>
         </form>
 </body>
 
